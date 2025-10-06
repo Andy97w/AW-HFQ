@@ -1,0 +1,7 @@
+/.vs
+/HighfieldTechTest.Api/.vs
+/HighfieldTechTest.Api/bin
+/HighfieldTechTest.Api/obj
+/HighfieldTechTest.Tests/bin
+/HighfieldTechTest.Tests/obj
+*.user

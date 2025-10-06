@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36202.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighfieldTechTest.Api", "HighfieldTechTest.Api\HighfieldTechTest.Api.csproj", "{09D9C78D-C78F-DD22-6D11-0913B0489952}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HighfieldTechTest.Tests", "HighfieldTechTest.Tests\HighfieldTechTest.Tests.csproj", "{C7C5D898-7072-E3D8-77D8-663DDD41A688}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09D9C78D-C78F-DD22-6D11-0913B0489952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D9C78D-C78F-DD22-6D11-0913B0489952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D9C78D-C78F-DD22-6D11-0913B0489952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D9C78D-C78F-DD22-6D11-0913B0489952}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7C5D898-7072-E3D8-77D8-663DDD41A688}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7C5D898-7072-E3D8-77D8-663DDD41A688}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7C5D898-7072-E3D8-77D8-663DDD41A688}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7C5D898-7072-E3D8-77D8-663DDD41A688}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {866BDA63-2EC1-41A7-AFDD-3A33D054E902}
+	EndGlobalSection
+EndGlobal

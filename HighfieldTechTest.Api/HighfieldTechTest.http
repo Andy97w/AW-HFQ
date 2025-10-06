@@ -1,0 +1,6 @@
+@HighfieldTechTest_HostAddress = http://localhost:5255
+
+GET {{HighfieldTechTest_HostAddress}}/api/usersummary
+Accept: application/json
+
+###
