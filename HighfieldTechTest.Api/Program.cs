@@ -19,6 +19,8 @@ public class Program
             }
         });
 
+        builder.Services.AddCors();
+
         // Register highfield API
         builder.Services.AddHttpClient("HighfieldUsers", client =>
         {
@@ -41,6 +43,11 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
+
+        app.UseCors(policy => policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
 
         app.MapControllers();
 

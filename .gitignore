@@ -5,3 +5,4 @@
 /HighfieldTechTest.Tests/bin
 /HighfieldTechTest.Tests/obj
 *.user
+/HighfieldTechTest.Web/obj
