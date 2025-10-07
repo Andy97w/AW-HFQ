@@ -4,12 +4,25 @@ public class Program
 {
     public static void Main(string[] args)
     {
-        var builder = WebApplication.CreateBuilder(args);
+        CreateHostBuilder(args).Build().Run();
+    }
 
+    public static IHostBuilder CreateHostBuilder(string[] args) =>
+        Host.CreateDefaultBuilder(args)
+            .ConfigureWebHostDefaults(webBuilder =>
+            {
+                webBuilder.UseStartup<Startup>();
+            });
+}
+
+public class Startup
+{
+    public void ConfigureServices(IServiceCollection services)
+    {
         // Add services to the container.
-        builder.Services.AddControllers();
-        builder.Services.AddEndpointsApiExplorer();
-        builder.Services.AddSwaggerGen(options =>
+        services.AddControllers();
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen(options =>
         {
             var xmlFile = $"{System.Reflection.Assembly.GetExecutingAssembly().GetName().Name}.xml";
             var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
@@ -19,29 +32,29 @@ public class Program
             }
         });
 
-        builder.Services.AddCors();
+        services.AddCors();
 
         // Register highfield API
-        builder.Services.AddHttpClient("HighfieldUsers", client =>
+        services.AddHttpClient("HighfieldUsers", client =>
         {
             client.BaseAddress = new Uri("https://recruitment.highfieldqualifications.com/");
         });
 
-        builder.Services.AddScoped<IUserDataRetrievalService, HttpUserDataRetrievalService>();
-        builder.Services.AddScoped<IUserAgeService, UserAgeService>();
-        builder.Services.AddScoped<IUserColourService, UserColourService>();
+        services.AddScoped<IUserDataRetrievalService, HttpUserDataRetrievalService>();
+        services.AddScoped<IUserAgeService, UserAgeService>();
+        services.AddScoped<IUserColourService, UserColourService>();
+    }
 
-        var app = builder.Build();
-
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
         // Configure the HTTP request pipeline.
-        if (app.Environment.IsDevelopment())
+        if (env.IsDevelopment())
         {
             app.UseSwagger();
             app.UseSwaggerUI();
         }
 
-        app.UseHttpsRedirection();
-
+        app.UseRouting();
         app.UseAuthorization();
 
         app.UseCors(policy => policy
@@ -49,8 +62,9 @@ public class Program
             .AllowAnyMethod()
             .AllowAnyHeader());
 
-        app.MapControllers();
-
-        app.Run();
+        app.UseEndpoints(endpoints =>
+        {
+            endpoints.MapControllers();
+        });
     }
 }
