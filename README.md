@@ -9,7 +9,7 @@ This solution consists of 3 projects:
 ### API (`HighfieldTechTest.Api`)
 A .NET 8 Web API that retrieves users from Highfield's recruitment API and processes the data to:
 - Calculate user ages and age plus twenty
-- Analyze favorite color statistics
+- Analyse favourite colour statistics
 - Return structured summary data
 
 ### Tests (`HighfieldTechTest.Tests`)
@@ -21,7 +21,7 @@ Comprehensive test suite including:
 ### Web (`HighfieldTechTest.Web`)
 A React frontend with Vite that:
 - Consumes the API data
-- Displays users in organized tables
+- Displays users in organised tables
 - Supports dark/light mode themes
 
 
